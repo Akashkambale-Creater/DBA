@@ -1,0 +1,24 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export ORACLE_SID=oradata
+export ORACLE_BASE=/u01/app/oracle
+export ORACLE_HOME=/u01/app/oracle/product/12.1.0/dbhome_1
+export PATH=$PATH:$ORACLE_HOME/bin
+export TNS_ADMIN=/u01/app/oracle/product/12.1.0/dbhome_1/network/admin
+export GG_HOME=/u01/app/oracle/product/12.1.0/gg
+export PATH=$PATH:$GG_HOME/bin
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+alias sql='rlwrap sqlplus / as sysdba'
+alias rman='rlwrap rman'
+alias adrci='rlwrap adrci'
+alias lsnrctl='rlwrap lsnrctl'
+alias dbup=' ps -ef | ps -ef | grep -E "pmon|tnslsnr" |grep -v grep|sort -k +9'
+export PATH
