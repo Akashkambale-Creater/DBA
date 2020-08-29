@@ -1,0 +1,3 @@
+dbup=' ps -ef | ps -ef | grep -E "pmon|tnslsnr" |grep -v grep|sort -k +9'
+
+#This Command will get you all running instances of databases like linstner and databases services
