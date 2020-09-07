@@ -1,0 +1,10 @@
+-- Create New tablespace
+Create tablespace DATA datafile '/u01/dbaclass/oradata/data01.dbf' size 5G autoextend on next 500M;
+
+
+-- Create tablespace on ASM diskgroup
+Create tablespace DATA datafile '+DATAG' size 5G autoextend on next 500M;
+
+
+-- Create big tablespace:
+CREATE BIGFILE TABLESPACE BIGTS datafile '/u01/dbaclass/oradata/bigts01.dbf' size 100G autoextend on NEXT 1G;
